@@ -12,8 +12,4 @@ export const refs = {
   getSpinner: document.querySelector('.spinner'),
   slickSlider: document.querySelector('.slider'),
 
-  // library start
-  loginBtn: document.querySelector('.login__button'),
-
-  // library end
-};
+}

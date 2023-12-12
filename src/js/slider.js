@@ -1,5 +1,4 @@
-import { BASE_URL, KEY, IMG_URL, API_URL, POPULAR_URL } from './url';
-import { refs } from './refs';
+
 
 export function initializeSlider() {
   $('.slider').slick({

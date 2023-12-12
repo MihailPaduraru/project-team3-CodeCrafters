@@ -1,22 +1,17 @@
 @import './base/reset';
 @import './base/body-style';
 @import './base/common';
-
 @import './utils/colors';
 @import './utils/mixins';
 @import './components/buttons';
-
 @import './utils/visually-hidden';
-
 @import './base/container';
 @import './base/section';
-
 @import './layout/header';
 @import './layout/movie_popular';
 @import './components/scroll';
 @import '../slick/slick.scss';
 @import './components/spinner';
 @import './components/pagination';
-@import './layout/modal-movie-info';
 @import './components/theme';
 @import './layout/lib-bacground';

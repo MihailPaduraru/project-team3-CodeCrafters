@@ -1,6 +1,6 @@
 import Pagination from 'tui-pagination';
 import { getWatched } from './lib';
-// import { refs } from './refs';
+
 
 const localUserId = localStorage.getItem('id-user');
 
