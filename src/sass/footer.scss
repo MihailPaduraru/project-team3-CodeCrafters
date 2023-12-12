@@ -1,0 +1,109 @@
+.footer {
+  padding-top: 28px;
+  padding-bottom: 28px;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+}
+
+.upper-footer,
+.bottom-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-date,
+.developper-info,
+.team-info {
+  color: #545454;
+  font-family: Roboto;
+  font-size: 14px;
+}
+
+.team-info a {
+  text-decoration-line: underline;
+}
+
+.team-info a:visited {
+  text-decoration: none;
+  color: #545454;
+}
+
+.heart-box {
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 4px;
+}
+
+.heart {
+  animation: heartbeat 1s infinite;
+  background-color: #b92f2c;
+  display: inline-block;
+  height: 8px;
+  margin: 0;
+
+  top: 40%;
+  left: -10%;
+  transform: rotate(-45deg);
+  position: absolute;
+  width: 10px;
+}
+
+.heart:before,
+.heart:after {
+  content: '';
+  background-color: #b92f2c;
+  border-radius: 50%;
+  height: 8px;
+  position: absolute;
+  width: 8px;
+}
+
+.heart:before {
+  top: -5px;
+  left: 0;
+}
+
+.heart:after {
+  left: 5px;
+  top: 0;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1) rotate(-45deg);
+  }
+  20% {
+    transform: scale(1.25) rotate(-45deg);
+  }
+  40% {
+    transform: scale(1.5) rotate(-45deg);
+  }
+}
+
+/* Stiluri tabletă */
+
+@media screen and (min-width: 768px) {
+  .footer-date,
+  .developper-info,
+  .team-info {
+    font-size: 16px;
+  }
+  .container.footer-container {
+    display: flex;
+  }
+}
+
+/* Stiluri desktop */
+
+@media screen and (min-width: 1280px) {
+  .footer-date,
+  .developper-info,
+  .team-info {
+    font-size: 16px;
+  }
+  .container.footer-container {
+    display: flex;
+  }
+}
