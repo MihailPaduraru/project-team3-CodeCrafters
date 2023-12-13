@@ -4,15 +4,63 @@
   list-style: none;
 }
 
+.backdrop {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1450980392156863);
+  opacity: 1;
+  overflow-y: scroll;
+  transition-property: opacity;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .modal {
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  background-color: #fff;
+  transform: translate(0) scale(1);
+  transition-property: transform;
+  transition-duration: 0.25s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  @include tablet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    transform: translate(-50%, -50%) scale(1);
+    transition-property: transform;
+    transition-duration: 0.25s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    width: 622px;
+    height: 562px;
+  }
+
+  @include desktop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    transform: translate(-50%, -50%) scale(1);
+    transition-property: transform;
+    transition-duration: 0.25s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    width: 888px;
+    height: 600px;
+  }
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
-  height: 100%;
   padding: 20px;
 }
 
@@ -21,11 +69,38 @@
   flex-direction: column;
   align-items: center;
 }
+
+.team-container::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  display: block;
+  width: 95%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #ff6b08;
+  @include tablet {
+    bottom: 30px;
+    height: 4px;
+  }
+  @include desktop {
+    bottom: 30px;
+    height: 4px;
+  }
+}
+
+.team-link-logo {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
 .team-name {
   font-size: 20px;
   line-height: 23px;
   font-weight: 500;
   padding-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 .team-color-span {
@@ -65,6 +140,19 @@ button:hover {
 .team-list {
   display: flex;
   flex-direction: column;
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 30px;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 30px;
+  }
 }
 .team-member {
   display: flex;
@@ -81,20 +169,16 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 15px;
 }
 
 .member-photo-img {
-  padding: 15px;
   border-radius: 5px;
   overflow: hidden;
 }
 
-.team-member:hover:focus {
-  transform: scale(1.04);
-}
 img {
   border-radius: 5px;
+  overflow: hidden;
 }
 
 .member-link {
@@ -107,4 +191,57 @@ img {
 .member-link:visited {
   text-decoration: none;
   color: black;
+}
+
+.team-member {
+  margin: 10px;
+  transform: scale(1);
+}
+
+.team-member:hover,
+.team-member:focus {
+  transform: scale(1.04);
+}
+
+.member-name {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.member-name::after {
+  content: '';
+  position: absolute;
+  bottom: 18px;
+  left: 40px;
+  display: block;
+  width: 140px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #ff6b08;
+
+  @include tablet {
+    left: 0px;
+    width: 130px;
+  }
+
+  @include desktop {
+    left: 10px;
+    width: 130px;
+  }
+}
+.member-description {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.backdrop-team {
+  display: none;
+}
+
+.backdrop-team.modal-open {
+  display: block;
 }

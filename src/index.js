@@ -9,4 +9,4 @@ import './js/spiner';
 import './js/slider';
 import './js/filter';
 import '../node_modules/basiclightbox/dist/basicLightbox.min.css';
-
+import './js/footer-modal';
