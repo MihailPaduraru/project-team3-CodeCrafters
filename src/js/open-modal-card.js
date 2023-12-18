@@ -2,6 +2,27 @@ import { BASE_URL, KEY } from './url';
 
 const modal = document.getElementById('card-modal');
 
+let movieForRendering;
+
+const watchedArray = [];
+const queueArray = [];
+
+const savedDataWatched = localStorage.getItem('watched');
+const parsedDataWatched = JSON.parse(savedDataWatched);
+if (parsedDataWatched) {
+  for (const array of parsedDataWatched) {
+    watchedArray.push(array);
+  }
+}
+
+const savedDataQueue = localStorage.getItem('queue');
+const parsedDataQueue = JSON.parse(savedDataQueue);
+if (parsedDataQueue) {
+  for (const array of parsedDataQueue) {
+    queueArray.push(array);
+  }
+}
+
 // function to open the modal and populate with movie information
 const openModal = async movieCard => {
   // Extract movie information from the clicked card
