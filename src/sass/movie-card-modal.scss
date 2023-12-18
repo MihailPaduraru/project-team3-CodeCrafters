@@ -1,0 +1,123 @@
+.card-modal {
+  z-index: 2;
+}
+.modal-card-content {
+  flex-direction: row;
+  display: flex;
+  gap: 30px;
+}
+.modal-info-content {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  gap: 10px;
+}
+.movie-title-modal {
+  color: #000;
+  font-family: Roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  padding-bottom: 30px;
+}
+.card-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 806px;
+  height: 558px;
+  background-color: white;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+.modal-card-img {
+  height: 100%;
+  max-width: 44%;
+  object-fit: cover;
+  display: block;
+}
+.votes-style {
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 5px;
+  background-color: #ef5b08;
+  color: white;
+  margin-right: 6px;
+}
+.voteCount-style {
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 5px;
+  background: #f7f7f7;
+}
+.movie-info {
+  color: #8c8c8c;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+.movie-details {
+  margin-left: 10px;
+}
+.movie-info-about {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+.movie-info-about-text {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  display: flex;
+}
+.close-card-modal {
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+  float: right;
+}
+.close-card-modal:hover {
+  color: #ef5b08;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+  margin-right: 83px;
+  margin-top: -44px;
+}
+
+.add-to-watched-btn-modal,
+.add-to-queue-btn-modal {
+  width: 131px;
+  height: 44px;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  background-color: #ff6b08;
+  border-width: 1px;
+  border-color: #0000;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.42;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.add-to-queue-btn-modal:hover,
+.add-to-watched-btn-modal:hover {
+  color: #000;
+  background-color: #ef5b08;
+}
