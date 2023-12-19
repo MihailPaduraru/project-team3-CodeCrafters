@@ -22,12 +22,11 @@ if (parsedDataQueue) {
     queueArray.push(array);
   }
 }
+const modalBackdrop = document.querySelector('.modal-backdrop');
+const body = document.body;
 
-// function to open the modal and populate with movie information
 const openModal = async movieCard => {
-  // Extract movie information from the clicked card
   const movieTitle = movieCard.querySelector('.movie-popular__title').innerText;
-  const movieGenre = movieCard.querySelector('.movie-popular__genre').innerText;
   const movieImg = movieCard
     .querySelector('.movie-popular__img')
     .getAttribute('src');
@@ -37,33 +36,57 @@ const openModal = async movieCard => {
   const genreNames = additionalInfo.genres.map(genre => genre.name);
   const popularity = additionalInfo.popularity;
   const voteCount = additionalInfo.vote_count;
-  // Update modal content with movie information and additional details
+
+  // update modal content with movie information and additional details
   modal.innerHTML = `
-  <span class="close-card-modal"> &times;</span>
-    <div class="modal-card-content">
+    <span class="close-card-modal"> &times;</span>
+    <div class="modal-card-container">
+      <div class="modal-img-container">
         <img class="modal-card-img" loading="lazy" src="${movieImg}" alt="${movieTitle}">
-        <div class="modal-info-content">
-        <h2 class="movie-title-modal"><strong>${movieTitle}</strong></h2>
-        <p class="movie-info">Vote / Votes:  <strong> <span class="votes-style" class="movie-details" > ${votes} </span> / <span class="voteCount-style"> ${voteCount}</span></strong></p>
-        <p class="movie-info"> Popularity:  <span class="movie-details"> <strong> ${popularity} </strong> </span> </p>
-        <p class="movie-info"> Original title: <span class="movie-details"><strong>${movieTitle} </strong></span></p>
-        <p class="movie-info">Genre: <span class="movie-details"><strong>${genreNames.join(
-          ', '
-        )}</strong><span></p>
-        <p class="movie-info-about">About: <span class="movie-info-about-text"><strong>${
-          additionalInfo.overview
-        }</strong> </span></p>
+      </div>
+      <div class="modal-info-content">
+        <h2 class="movie-title-modal">${movieTitle}</h2>
+        <div class="movie-info-container">
+          <ul>
+            <li class="movie-info">
+              Vote / Votes:
+              <span class="votes-style" class="movie-details"> ${votes} </span> /
+              <span class="voteCount-style"> ${voteCount}</span>
+            </li>
+            <li class="movie-info">
+              Popularity:
+              <span class="movie-details">${popularity}</span>
+            </li>
+            <li class="movie-info">
+              Original title:
+              <span class="movie-details">${movieTitle} </span>
+            </li>
+            <li class="movie-info">
+              Genre:
+              <span class="movie-details">${genreNames.join(', ')}</span>
+            </li>
+          </ul>
         </div>
-   </div>
-   <div class="modal-buttons">
-   <button class="add-to-watched-btn-modal">add to Watched</button>
-   <button class="add-to-queue-btn-modal">add to queue</button>
- </div>
- 
-  
+        <span class="movie-info-about">About:</span>
+        <p><span class="movie-info-about-text">${
+          additionalInfo.overview
+        }</span></p>
+        <div class="modal-buttons">
+          <button class="add-to-watched-btn-modal">add to Watched</button>
+          <button class="add-to-queue-btn-modal">add to queue</button>
+        </div>
+      </div>
+    </div>
   `;
 
   modal.style.display = 'block';
+  body.style.overflow = 'hidden'; // prevent scrolling on the background
+};
+
+const closeModal = () => {
+  modalBackdrop.style.display = 'none';
+  modal.style.display = 'none';
+  body.style.overflow = ''; // allow scrolling on the background
 };
 
 export const fetchAdditionalInfo = async movieId => {
@@ -93,11 +116,18 @@ document.addEventListener('click', event => {
   if (movieCard) {
     event.preventDefault();
     openModal(movieCard);
+    modalBackdrop.style.display = 'block';
   }
 
   //  check if the clicked element is the close button
   if (clickedElement.classList.contains('close-card-modal')) {
-    modal.style.display = 'none';
-    modal.style.cursor = 'pointer';
+    closeModal();
+  }
+});
+
+// close the modal when the 'Esc' key is pressed
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') {
+    closeModal();
   }
 });

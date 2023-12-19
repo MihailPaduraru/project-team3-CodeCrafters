@@ -1,44 +1,98 @@
+.modal-backdrop.active {
+  display: block;
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.card-modal::-webkit-scrollbar-thumb {
+  background-color: #ef5b08;
+  border-radius: 9px;
+}
+
 .card-modal {
   z-index: 2;
-}
-.modal-card-content {
-  flex-direction: row;
-  display: flex;
-  gap: 30px;
-}
-.modal-info-content {
-  display: flex;
-  width: 50%;
-  flex-direction: column;
-  gap: 10px;
-}
-.movie-title-modal {
-  color: #000;
-  font-family: Roboto;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 500;
-  padding-bottom: 30px;
-}
-.card-modal {
+  overflow-x: hidden;
+  overflow-y: auto;
   display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 806px;
-  height: 558px;
-  background-color: white;
-  padding: 25px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+  height: 87%;
+  padding: 10px;
+  border-radius: 7px;
 }
+
 .modal-card-img {
+  max-width: 100%;
   height: 100%;
-  max-width: 44%;
   object-fit: cover;
-  display: block;
+  padding: 20px;
 }
+
+.modal-info-content {
+  display: flex;
+  flex-direction: column;
+  width: 152%;
+  gap: 24px;
+}
+
+.modal-img-container {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.movie-title-modal {
+  color: #000;
+  font-family: Roboto;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 500;
+  line-height: 1.15;
+  width: 65%;
+}
+
+.movie-info-container {
+  margin-bottom: 20px;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.movie-info {
+  color: #8c8c8c;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  padding: 5px;
+}
+
+.movie-details {
+  color: #000;
+}
+
 .votes-style {
   padding-left: 8px;
   padding-right: 8px;
@@ -47,58 +101,23 @@
   color: white;
   margin-right: 6px;
 }
+
 .voteCount-style {
   padding-left: 6px;
   padding-right: 6px;
   border-radius: 5px;
   background: #f7f7f7;
 }
-.movie-info {
-  color: #8c8c8c;
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 16px;
-}
-.movie-details {
-  margin-left: 10px;
-}
-.movie-info-about {
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 16px;
-  text-transform: uppercase;
-}
-.movie-info-about-text {
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 20px;
-  display: flex;
-}
-.close-card-modal {
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 20px;
-  color: #333;
-  font-weight: bold;
-  float: right;
-}
-.close-card-modal:hover {
-  color: #ef5b08;
-}
+
 .modal-buttons {
   display: flex;
-  justify-content: end;
-  gap: 10px;
-  margin-right: 83px;
-  margin-top: -44px;
+  gap: 20px;
+  padding-left: 50px;
 }
 
 .add-to-watched-btn-modal,
 .add-to-queue-btn-modal {
-  width: 131px;
+  width: 100px;
   height: 44px;
   text-transform: uppercase;
   color: #fff;
@@ -114,10 +133,115 @@
   transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 124px;
 }
 
 .add-to-queue-btn-modal:hover,
 .add-to-watched-btn-modal:hover {
   color: #000;
   background-color: #ef5b08;
+}
+
+.movie-info-about-text {
+  color: #000;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  width: 70%;
+  display: inline-block;
+  padding-right: 43px;
+}
+
+.movie-info-about {
+  color: #000;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.close-card-modal {
+  cursor: pointer;
+  font-size: 30px;
+  color: #333;
+  font-weight: bold;
+  float: right;
+}
+
+.close-card-modal:hover {
+  color: #ef5b08;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ef5b08;
+}
+
+@media screen and (min-width: 320px) {
+  .modal-buttons {
+    display: flex;
+    gap: 29px;
+    padding-left: 25px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card-modal {
+    width: 90%;
+  }
+
+  .modal-card-container {
+    flex-direction: row;
+    align-items: flex-start;
+    display: flex;
+  }
+
+  .modal-info-content {
+    width: 50%;
+    padding-top: 19px;
+    gap: 0px;
+  }
+  .modal-buttons {
+    justify-content: center;
+    padding-top: 57px;
+    padding-right: 40px;
+    width: 116%;
+  }
+  .movie-info-about-text {
+    width: 100%;
+  }
+  .add-to-watched-btn-modal,
+  .add-to-queue-btn-modal {
+    width: 100%;
+  }
+  .movie-title-modal {
+    font-size: 38px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .movie-title-modal {
+    font-size: 30px;
+    line-height: 1.17;
+  }
+
+  .movie-info-about-text {
+    line-height: 1.67;
+  }
+
+  .card-modal {
+    overflow-y: auto;
+  }
+  .modal-img-container {
+    max-width: 70%;
+    margin-bottom: 0;
+  }
 }
