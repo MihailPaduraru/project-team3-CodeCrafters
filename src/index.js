@@ -10,4 +10,6 @@ import './js/slider';
 import './js/filter';
 import '../node_modules/basiclightbox/dist/basicLightbox.min.css';
 import './js/footer-modal';
+import './js/my-library-list';
 import './js/open-modal-card.js';
+
