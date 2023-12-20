@@ -30,11 +30,11 @@
   background-color: #fff;
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 90%;
+  width: 70%;
   max-width: 800px;
   height: 87%;
   padding: 10px;
-  border-radius: 7px;
+  border-radius: 10px;
 }
 
 .modal-card-img {
@@ -42,13 +42,14 @@
   height: 100%;
   object-fit: cover;
   padding: 20px;
+  border-radius: 25px;
 }
 
 .modal-info-content {
   display: flex;
   flex-direction: column;
-  width: 152%;
-  gap: 24px;
+  width: 177%;
+  gap: 19px;
 }
 
 .modal-img-container {
@@ -68,7 +69,7 @@
   margin-bottom: 20px;
   font-weight: 500;
   line-height: 1.15;
-  width: 65%;
+  width: 54%;
 }
 
 .movie-info-container {
@@ -78,6 +79,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
+  width: 61%;
 }
 
 .movie-info {
@@ -87,6 +89,7 @@
   font-weight: 500;
   line-height: 16px;
   padding: 5px;
+  padding-right: 66px;
 }
 
 .movie-details {
@@ -111,8 +114,8 @@
 
 .modal-buttons {
   display: flex;
-  gap: 20px;
-  padding-left: 50px;
+  gap: 38px;
+  padding-top: 20px;
 }
 
 .add-to-watched-btn-modal,
@@ -148,7 +151,7 @@
   font-size: 12px;
   font-weight: 500;
   line-height: 20px;
-  width: 70%;
+  width: 60%;
   display: inline-block;
   padding-right: 43px;
 }
@@ -160,7 +163,6 @@
   font-weight: 500;
   line-height: 16px;
   text-transform: uppercase;
-  margin-bottom: 6px;
 }
 
 .close-card-modal {
@@ -184,18 +186,40 @@
 ::-webkit-scrollbar-thumb {
   background: #ef5b08;
 }
+::-webkit-scrollbar-button {
+  display: none;
+}
 
 @media screen and (min-width: 320px) {
   .modal-buttons {
     display: flex;
     gap: 29px;
-    padding-left: 25px;
+    padding-left: 1px;
+  }
+  .add-to-watched-btn-modal,
+  .add-to-queue-btn-modal {
+    width: 86px;
+  }
+  .movie-info-container {
+    width: 57%;
+  }
+}
+@media screen and (min-width: 450px) {
+  .modal-buttons {
+    display: flex;
+    gap: 29px;
+    padding-left: 46px;
+  }
+  .add-to-watched-btn-modal,
+  .add-to-queue-btn-modal {
+    width: 110px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .card-modal {
     width: 90%;
+    height: 87%;
   }
 
   .modal-card-container {
@@ -205,25 +229,28 @@
   }
 
   .modal-info-content {
-    width: 50%;
-    padding-top: 19px;
-    gap: 0px;
+    width: 80%;
+    padding-top: 15px;
   }
   .modal-buttons {
     justify-content: center;
-    padding-top: 57px;
-    padding-right: 40px;
-    width: 116%;
+    padding-top: 50px;
+    padding-left: 1px;
+    width: 95%;
   }
   .movie-info-about-text {
     width: 100%;
   }
+  .movie-info-container {
+    width: 100%;
+  }
   .add-to-watched-btn-modal,
   .add-to-queue-btn-modal {
-    width: 100%;
+    width: 130px;
   }
   .movie-title-modal {
     font-size: 38px;
+    width: 90%;
   }
 }
 

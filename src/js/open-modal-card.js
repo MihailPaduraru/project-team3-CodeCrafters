@@ -47,25 +47,27 @@ const openModal = async movieCard => {
       <div class="modal-info-content">
         <h2 class="movie-title-modal">${movieTitle}</h2>
         <div class="movie-info-container">
-          <ul>
-            <li class="movie-info">
-              Vote / Votes:
-              <span class="votes-style" class="movie-details"> ${votes} </span> /
-              <span class="voteCount-style"> ${voteCount}</span>
-            </li>
-            <li class="movie-info">
-              Popularity:
-              <span class="movie-details">${popularity}</span>
-            </li>
-            <li class="movie-info">
-              Original title:
-              <span class="movie-details">${movieTitle} </span>
-            </li>
-            <li class="movie-info">
-              Genre:
-              <span class="movie-details">${genreNames.join(', ')}</span>
-            </li>
-          </ul>
+        <table>
+        <tr>
+          <td class="movie-info">Vote / Votes:</td>
+          <td>
+            <span class="votes-style movie-details">${votes}</span> /
+            <span class="voteCount-style">${voteCount}</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="movie-info">Popularity:</td>
+          <td><span class="movie-details">${popularity}</span></td>
+        </tr>
+        <tr>
+          <td class="movie-info">Original title:</td>
+          <td><span class="movie-details">${movieTitle}</span></td>
+        </tr>
+        <tr>
+          <td class="movie-info">Genre:</td>
+          <td><span class="movie-details">${genreNames.join(', ')}</span></td>
+        </tr>
+      </table>
         </div>
         <span class="movie-info-about">About:</span>
         <p><span class="movie-info-about-text">${
