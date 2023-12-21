@@ -30,7 +30,7 @@
   background-color: #fff;
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 70%;
+  width: 90%;
   max-width: 800px;
   height: 87%;
   padding: 10px;
@@ -50,6 +50,8 @@
   flex-direction: column;
   width: 177%;
   gap: 19px;
+  padding-left: 15px;
+  padding-right: 32px;
 }
 
 .modal-img-container {
@@ -115,7 +117,7 @@
 .modal-buttons {
   display: flex;
   gap: 38px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .add-to-watched-btn-modal,
@@ -130,19 +132,21 @@
   border-color: #0000;
   border-radius: 5px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 500;
   line-height: 1.42;
   transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   width: 124px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .add-to-queue-btn-modal:hover,
 .add-to-watched-btn-modal:hover {
   color: #000;
   background-color: #ef5b08;
+  transform: scale(1.1);
 }
 
 .movie-info-about-text {
@@ -171,16 +175,22 @@
   color: #333;
   font-weight: bold;
   float: right;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-right: 5px;
 }
 
 .close-card-modal:hover {
   color: #ef5b08;
+
+  transform: scale(1.2);
 }
 
 /* width */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 5px;
+
 }
+
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
@@ -193,26 +203,32 @@
 @media screen and (min-width: 320px) {
   .modal-buttons {
     display: flex;
-    gap: 29px;
+    gap: 13px;
     padding-left: 1px;
   }
   .add-to-watched-btn-modal,
   .add-to-queue-btn-modal {
-    width: 86px;
+    width: 113px;
   }
   .movie-info-container {
     width: 57%;
+  }
+}
+@media screen and (min-width: 420px) {
+  .modal-buttons {
+    padding-left: 25px;
   }
 }
 @media screen and (min-width: 450px) {
   .modal-buttons {
     display: flex;
     gap: 29px;
-    padding-left: 46px;
+    padding-left: 29px;
   }
   .add-to-watched-btn-modal,
   .add-to-queue-btn-modal {
-    width: 110px;
+    width: 152px;
+    font-size: 13px;
   }
 }
 
@@ -234,9 +250,9 @@
   }
   .modal-buttons {
     justify-content: center;
-    padding-top: 50px;
+
     padding-left: 1px;
-    width: 95%;
+    width: 80%;
   }
   .movie-info-about-text {
     width: 100%;
