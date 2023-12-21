@@ -125,6 +125,9 @@ document.addEventListener('click', event => {
   if (clickedElement.classList.contains('close-card-modal')) {
     closeModal();
   }
+  if (clickedElement === modalBackdrop) {
+    closeModal();
+  }
 });
 
 // close the modal when the 'Esc' key is pressed
